@@ -1,0 +1,52 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <div><%= f.label :username %><br />
+  <%= f.text_field :username %></div>
+  </div>
+
+  <div class="field">
+  <div><%= f.label :first_name %><br />
+  <%= f.text_field :first_name %></div>
+  </div>
+
+  <div class="field">
+  <div><%= f.label :last_name %><br />
+  <%= f.text_field :last_name %></div>
+  </div>
+
+  <div class="field">
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+  </div>
+
+  <div class="field">
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+  </div>
+
+  <div class="field">
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+  </div>
+
+  <div class="field">
+  <div><%= f.label :user_role_id %><br />
+  <%= f.select( :user_role_id,  UserRole.all.map {|u| [u.role,u.id]}, {:include_blank => true}) %></div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

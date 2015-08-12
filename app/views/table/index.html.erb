@@ -1,0 +1,40 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/assets/aprstyle2.css">
+</head>
+
+<table class = "Table">
+    
+        <tr>
+            <th>Number</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Assigned User</th>
+            <th>Checked Out</th>
+        </tr>
+    <% @criterions.each do |c|%>
+        
+        <tr>
+            <td class = "highlight"><%=c.criterion_number%></td>
+            <td class = "highlight"><%=c.name%></td>
+            <td class = "highlight"></td>
+            <td class = "highlight"></td>
+            <td class = "highlight"></td>
+            
+        </tr>
+        
+        <%@sections.where(:criterion_id=>c.id).each do |s|%>
+        
+            <tr>
+                <td><%=s.section_number%></td>
+                <td><%=s.description%></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            
+            </tr>
+        
+        <%end %>
+    
+    <%end%>
+        
+</table>

@@ -1,0 +1,21 @@
+<%= form_for(@section_datum) do |f| %>
+  <% if @section_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@section_datum.errors.count, "error") %> prohibited this section_datum from being saved:</h2>
+
+      <ul>
+      <% @section_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.text_area :data %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

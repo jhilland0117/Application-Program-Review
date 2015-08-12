@@ -1,0 +1,27 @@
+<h1>Listing apr_reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apr_reports.each do |apr_report| %>
+      <tr>
+        <td><%= apr_report.name %></td>
+        <td><%= link_to 'Show', apr_report %></td>
+        <td><%= link_to 'Edit', edit_apr_report_path(apr_report) %></td>
+        <td><%= link_to 'Destroy', apr_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apr report', new_apr_report_path %>

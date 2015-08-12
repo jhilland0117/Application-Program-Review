@@ -1,0 +1,4 @@
+class Section < ActiveRecord::Base
+	has_many :section_data
+	belongs_to :criterion
+end

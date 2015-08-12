@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+
+ 
+	  <strong>Data:</strong><br /><br />
+	 <div id="section_data_editor" data-mercury="full">
+   
+  	<%= @section_datum.data.html_safe %>
+	
+
+   </div>
+</p>
+
+<script>
+jQuery(window).on('mercury:ready', function() { Mercury.saveUrl = 'section_data/' + <%= @section_datum.id %> +"/mercury_update"});
+</script>
+<%= link_to 'Edit Section',"/editor"+request.path, :id=> "edit_link", :data=> {:save_url=> mercury_update_section_datum_path(@section_datum)} %>
+
+<%= link_to 'Edit', edit_section_datum_path(@section_datum) %> |
+<%= link_to 'Back', section_data_path %>

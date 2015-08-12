@@ -1,0 +1,116 @@
+body {
+			padding: 0px;
+			margin: 0px;
+			background-image: url('background.jpg');
+			/*background-position: center;*/
+			background-color: #e2dcdc;
+			
+}
+
+#login_box{
+	height:50px;
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+
+			
+
+}
+#wrapper {
+			width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
+			background-color: rgba(255, 255, 255, 0.5);
+			margin-top: 5px;
+			
+			
+			
+}
+#head{
+	 
+	 
+	 
+
+}
+
+#banner{
+	height:200px;
+	background-image:url('common/images/banner.jpg');
+	
+}
+
+#navigation{
+	/*height:50px;*/
+	background-color: #ce0f42;
+	height: 31px;
+	
+	
+}
+#content{
+	min-height: 550px;
+
+}
+#footer{
+
+   height: 30px;
+   background-color: #ce0f42;
+}
+.clear{
+ clear:both;
+}
+
+ul.hmenu {
+  list-style: none;	
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+ul.hmenu li {
+  display: inline;  
+}
+
+/* ---- start navigation area-----*/
+#navigation ul{
+
+
+list-style:none;
+margin:0;
+
+
+
+
+}
+#navigation li{
+	background-color: #ce0f42; 
+float:left;
+padding: 3px;
+
+margin-left: 5px;
+
+border-top:3px;
+border-top-style:solid;
+border-color: #ce0f42;
+
+
+}
+#navigation li a{
+
+text-decoration:none;
+color:white;
+font-size: 18px;
+/*border:3px;*/
+
+}
+
+#navigation li:hover{
+
+background-color:teal;
+
+border-left-color:teal;
+border-right-color:teal;
+
+border-top-color: orange;
+}
+
+
+/*------------end navigation ----------*/

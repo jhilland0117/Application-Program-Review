@@ -1,0 +1,29 @@
+<h1>Listing pdfs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Temp url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pdfs.each do |pdf| %>
+      <tr>
+        <td><%= pdf.url %></td>
+        <td><%= pdf.temp_url %></td>
+        <td><%= link_to 'Show', pdf %></td>
+        <td><%= link_to 'Edit', edit_pdf_path(pdf) %></td>
+        <td><%= link_to 'Destroy', pdf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pdf', new_pdf_path %>

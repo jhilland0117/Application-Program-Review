@@ -1,0 +1,4 @@
+class SectionDatum < ActiveRecord::Base
+	belongs_to :apr_report
+	belongs_to :section
+end

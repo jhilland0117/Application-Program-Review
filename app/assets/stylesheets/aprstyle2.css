@@ -1,0 +1,177 @@
+body {
+			padding: 0px;
+			margin: 0px;
+			background-image: url('background.jpg');
+			/*background-position: center;*/
+			background-color: #e2dcdc;
+			
+}
+
+#login_box{
+	height:50px;
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+
+			
+
+}
+#wrapper {
+			width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
+			background-color: rgba(255, 255, 255, 0.5);
+			margin-top: 5px;
+			
+			
+			
+}
+#head{
+	 
+	 
+	 
+
+}
+
+#banner{
+	height:200px;
+	background-image:url('common/images/banner.jpg');
+	
+}
+
+#navigation{
+	/*height:50px;*/
+	background-color: #ce0f42;
+	height: 31px;
+	
+	
+}
+#content{
+	min-height: 550px;
+
+}
+#footer{
+
+   height: 30px;
+   background-color: #ce0f42;
+}
+.clear{
+ clear:both;
+}
+
+/* ---- start navigation area-----*/
+#navigation ul{
+
+
+list-style:none;
+margin:0;
+
+
+
+
+}
+#navigation li{
+	background-color: #ce0f42; 
+float:left;
+padding: 3px;
+
+margin-left: 5px;
+
+border-top:3px;
+border-top-style:solid;
+border-color: #ce0f42;
+
+
+}
+#navigation li a{
+
+text-decoration:none;
+color:white;
+font-size: 18px;
+/*border:3px;*/
+
+}
+
+#navigation li:hover{
+
+background-color:teal;
+
+border-left-color:teal;
+border-right-color:teal;
+
+border-top-color: orange;
+}
+
+
+/*------------end navigation ----------*/
+
+/*----------Start admin/dashboard ------*/
+
+
+
+<style type="text/css">
+
+	.Table {
+	}
+
+    table.Table {
+        border:1px solid lightgrey;
+        width:950px;
+        border-collapse:collapse;
+        margin-left:auto;
+        margin-right:auto;
+        font-family:Helvetica;
+        font-weight:400;
+    }
+
+	.Table tr:nth-child(odd){ 
+		background: #F5F5F5;
+	}
+
+	.Table tr:nth-child(even){
+		background: #FFFFFF;
+	}
+
+    .Table tr:first-child {
+        background: -webkit-linear-gradient(lightgrey, lightgrey, white);
+        text-align: center;
+        font-size:16;
+        font-weight:100;
+    }
+
+    .Table td:nth-child(1) {
+        font-size:14;
+        text-align: left;
+        width:8px;
+    }
+
+    .Table td:nth-child(2) {
+        font-size: 12;
+        width:500px;
+    }
+
+	.Table td{ 
+        border:1px solid lightgrey;
+        padding: 8px;
+	}
+
+    .highlight {
+        background:LightGrey;
+        font-weight: bold;
+    }
+
+
+
+</style>
+
+
+/*------- end admin/dashboard -------*/
+
+
+
+
+
+
+
+
+

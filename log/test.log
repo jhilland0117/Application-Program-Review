@@ -1,0 +1,103 @@
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUserRoles (20131110191801)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "user_roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "role" text, "created_at" datetime, "updated_at" datetime, "user_id" integer) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131110191801"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUsers (20131110192124)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" text, "first_name" text, "last_name" text, "created_at" datetime, "updated_at" datetime, "user_role_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131110192124"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUnits (20131110192310)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "units" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "unit_name" text, "created_at" datetime, "updated_at" datetime, "apr_report_id" integer) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131110192310"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateMilestones (20131110192523)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "milestones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "deadline" date, "created_at" datetime, "updated_at" datetime, "apr_report_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131110192523"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePdfs (20131110192744)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "pdfs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" text, "temp_url" text, "created_at" datetime, "updated_at" datetime, "apr_report_id" integer) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131110192744"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAprReports (20131110192923)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "apr_reports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "created_at" datetime, "updated_at" datetime, "unit_id" integer, "milestone_id" integer, "pdf_id" integer, "section_data_id" integer, "type_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131110192923"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTypes (20131110192951)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "created_at" datetime, "updated_at" datetime, "apr_report_id" integer) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131110192951"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateCriterions (20131110201514)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "criterions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "created_at" datetime, "updated_at" datetime, "section_id" integer) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131110201514"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSections (20131110201703)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "sections" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "section_number" text, "description" text, "created_at" datetime, "updated_at" datetime, "section_datum_id" integer, "criterion_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131110201703"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSectionData (20131110201935)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "section_data" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime, "apr_report_id" integer, "section_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131110201935"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUnitsUsers (20131114225458)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "units_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "unit_id" integer, "user_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131114225458"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAprReportsUsers (20131114230051)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "apr_reports_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "apr_report_id" integer) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131114230051"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddDeviseToUsers (20131121190632)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "email" varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "encrypted_password" varchar(255) DEFAULT '' NOT NULL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "reset_password_token" varchar(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "reset_password_sent_at" datetime
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0 NOT NULL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "current_sign_in_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "last_sign_in_at" datetime
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "current_sign_in_ip" varchar(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "last_sign_in_ip" varchar(255)
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20131121190632"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to EditSectionsAndCriterion (20131204003147)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  ALTER TABLE "criterions" ADD "criterion_number" varchar(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "criterions" ADD "description" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  CREATE INDEX "index_criterions_on_criterion_number" ON "criterions" ("criterion_number")
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_criterions_on_description" ON "criterions" ("description")[0m
+  [1m[35m (0.6ms)[0m  CREATE TEMPORARY TABLE "asections" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "section_number" text, "description" text, "created_at" datetime, "updated_at" datetime, "section_datum_id" integer, "criterion_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "sections"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "sections"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "sections" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "section_number" text, "description" text, "created_at" datetime, "updated_at" datetime, "section_datum_id" integer, "criterion_id" integer) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "asections"
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "asections"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131204003147"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddProviderToUsers (20131204193637)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "provider" varchar(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "uid" varchar(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20131204193637"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
